@@ -80,6 +80,23 @@ sectionTitleArray[3].textContent = siteContent["main-content"]["product-h4"];
 sectionTitleArray[4].textContent = siteContent["main-content"]["vision-h4"];
 sectionTitleArray[5].textContent = siteContent["contact"]["contact-h4"];
 
-//update copyright info footer
-let date = document.querySelector('footer');
-date.textContent = siteContent["footer"]["copyright"];
+//group p tags
+let sectionContent = document.getElementsByTagName('p');
+let sectionContentArray = Array.from(sectionContent);
+
+//change p tags
+sectionContentArray[0].textContent = siteContent["main-content"]["features-content"];
+sectionContentArray[1].textContent = siteContent["main-content"]["about-content"];
+sectionContentArray[2].textContent = siteContent["main-content"]["services-content"];
+sectionContentArray[3].textContent = siteContent["main-content"]["product-content"];
+sectionContentArray[4].textContent = siteContent["main-content"]["vision-content"];
+
+//setting line break for address
+sectionContentArray[5].setAttribute('style', 'white-space: pre;');
+sectionContentArray[5].textContent = "123 Way 456 Street\r\n";
+sectionContentArray[5].textContent += "Somewhere, USA";
+
+//changing the rest of the p tags
+sectionContentArray[6].textContent = siteContent["contact"]["phone"];
+sectionContentArray[7].textContent = siteContent["contact"]["email"];
+sectionContentArray[8].textContent = siteContent["footer"]["copyright"];
