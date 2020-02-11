@@ -42,7 +42,11 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 //update navigation bar
-
+let links = document.querySelectorAll('a');
+for (let i = 0; i < links.length; i++) {
+    links[i].classList.add(`nav-item-${i+1}`);
+    links[i].textContent = siteContent.nav[`nav-item-${i+1}`];
+}
 
 //update DOM IS AWESOME heading
 const title = document.querySelector('h1');
@@ -55,18 +59,34 @@ title.textContent += "Awesome";
 const btn = document.querySelector('button');
 btn.textContent = "Get Started";
 
-//update features and about section
+//update top content
+//const featuresTitle = top - content.querySelector('h4');
+//featuresTitle.textContent = siteContent["main-content"]["features-h4"];
+
+//const aboutTitle = document.top - content.querySelector('h4');
+//aboutTitle.textContent = siteContent["main-content"]["about-h4"];
 
 // update the img src for the second image
 let snippet = document.getElementById("cta-img");
 snippet.setAttribute('src', siteContent["cta"]["img-src"]);
 
-//update services, product, and vision section
+//update bottom content
 
 // update the img src for the third image
 let crossScreen = document.getElementById("middle-img");
 crossScreen.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
 //update contact info
+//const infoTitle = document.querySelector('h4');
+//infoTitle.textContent = siteContent["contact"]["contact-h4"];
+
+//const infoAddress = document.querySelector();
+
+//const infoPhone = document.querySelector();
+
+//const infoEmail = document.querySelector();
+
 
 //update copyright info footer
+const date = document.querySelector('footer');
+date.textContent = siteContent["footer"]["copyright"];
