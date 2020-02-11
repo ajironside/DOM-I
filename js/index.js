@@ -100,3 +100,21 @@ sectionContentArray[5].textContent += "Somewhere, USA";
 sectionContentArray[6].textContent = siteContent["contact"]["phone"];
 sectionContentArray[7].textContent = siteContent["contact"]["email"];
 sectionContentArray[8].textContent = siteContent["footer"]["copyright"];
+
+//change navigation text
+links.forEach(nav => {
+    nav.style.color = "green";
+});
+
+//.appendChild()` and `.prepend()
+let newNav = document.createElement('a');
+newNav.textContent = "history";
+let allNav = document.querySelector('nav');
+allNav.appendChild(newNav);
+newNav.style.color = "purple";
+
+//nav.prepend("History", links)
+let firstNav = document.createElement('a');
+firstNav.textContent = "Jobs";
+allNav.prepend(firstNav);
+firstNav.style.color = "red";
