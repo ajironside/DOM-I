@@ -41,6 +41,15 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
+// update the img src for the second image
+let snippet = document.getElementById("cta-img");
+snippet.setAttribute('src', siteContent["cta"]["img-src"]);
+
+// update the img src for the third image
+let crossScreen = document.getElementById("middle-img");
+crossScreen.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+
 //update navigation bar
 let links = document.querySelectorAll('a');
 for (let i = 0; i < links.length; i++) {
@@ -49,44 +58,28 @@ for (let i = 0; i < links.length; i++) {
 }
 
 //update DOM IS AWESOME heading
-const title = document.querySelector('h1');
+let title = document.querySelector('h1');
 title.setAttribute('style', 'white-space: pre;');
 title.textContent = "DOM \r\n";
 title.textContent += "Is \r\n";
 title.textContent += "Awesome";
 
 //update Get Started button
-const btn = document.querySelector('button');
+let btn = document.querySelector('button');
 btn.textContent = "Get Started";
 
-//update top content
-//const featuresTitle = top - content.querySelector('h4');
-//featuresTitle.textContent = siteContent["main-content"]["features-h4"];
+//group h4 tags
+let sectionTitle = document.getElementsByTagName('h4');
+let sectionTitleArray = Array.from(sectionTitle);
 
-//const aboutTitle = document.top - content.querySelector('h4');
-//aboutTitle.textContent = siteContent["main-content"]["about-h4"];
-
-// update the img src for the second image
-let snippet = document.getElementById("cta-img");
-snippet.setAttribute('src', siteContent["cta"]["img-src"]);
-
-//update bottom content
-
-// update the img src for the third image
-let crossScreen = document.getElementById("middle-img");
-crossScreen.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
-
-//update contact info
-//const infoTitle = document.querySelector('h4');
-//infoTitle.textContent = siteContent["contact"]["contact-h4"];
-
-//const infoAddress = document.querySelector();
-
-//const infoPhone = document.querySelector();
-
-//const infoEmail = document.querySelector();
-
+//change h4 tags
+sectionTitleArray[0].textContent = siteContent["main-content"]["features-h4"];
+sectionTitleArray[1].textContent = siteContent["main-content"]["about-h4"];
+sectionTitleArray[2].textContent = siteContent["main-content"]["services-h4"];
+sectionTitleArray[3].textContent = siteContent["main-content"]["product-h4"];
+sectionTitleArray[4].textContent = siteContent["main-content"]["vision-h4"];
+sectionTitleArray[5].textContent = siteContent["contact"]["contact-h4"];
 
 //update copyright info footer
-const date = document.querySelector('footer');
+let date = document.querySelector('footer');
 date.textContent = siteContent["footer"]["copyright"];
